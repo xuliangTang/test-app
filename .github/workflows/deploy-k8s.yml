@@ -29,6 +29,10 @@ on:
     secrets:
       K8S_CONFIG:
         required: true
+      DOCKER_USERNAME:
+        required: true
+      DOCKER_PASSWORD:
+        required: true
 
 jobs:
   deploy:
@@ -39,6 +43,13 @@ jobs:
       url: ${{ inputs.environment_url }}
     runs-on: ubuntu-latest
     steps:
+      - name: Login Docker Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ inputs.REGISTRY }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
       - name: Split Version or Branch
         uses: jungwinter/split@v2
         id: split

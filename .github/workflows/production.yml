@@ -14,3 +14,5 @@ jobs:
       repository: lain-txl/laravel-app
     secrets:
       K8S_CONFIG: ${{ secrets.K8S_CONFIG }}
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
