@@ -6,10 +6,11 @@ on:
 jobs:
   deploy:
     name: Kubernetes
-    uses: XNXKTech/workflows/.github/workflows/deploy-k8s.yml@main
+    uses: ./.github/workflows/deploy-k8s.yml
     with:
       environment: Production
       registry: registry.cn-hangzhou.aliyuncs.com
+      namespace: myweb
+      repository: lain-txl/laravel-app
     secrets:
       K8S_CONFIG: ${{ secrets.K8S_CONFIG }}
-      IAC_TOKEN: ${{ secrets.IAC_TOKEN }}
