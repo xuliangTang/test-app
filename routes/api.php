@@ -15,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/user', function (Request $request) {
-   return response()->json(['code' => 200, 'msg' => 'success']);
+   return response()->json(['code' => 200, 'msg' => 'success', 'data' => ['id' => 1]]);
 });
 
