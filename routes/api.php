@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/user', function (Request $request) {
-   return response()->json(['code' => 200, 'msg' => 'success', 'data' => ['id' => 1]]);
-});
+Route::controller(\App\Http\Controllers\UserController::class)
+    ->group(function () {
+        Route::get('user/{user_id}', 'show');
+    });
 
