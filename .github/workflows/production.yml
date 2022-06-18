@@ -12,3 +12,4 @@ jobs:
       registry: registry.cn-hangzhou.aliyuncs.com
     secrets:
       K8S_CONFIG: ${{ secrets.K8S_CONFIG }}
+      IAC_TOKEN: ${{ secrets.IAC_TOKEN }}
