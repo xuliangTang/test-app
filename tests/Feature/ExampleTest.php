@@ -21,11 +21,13 @@ class ExampleTest extends TestCase
 
     public function testUser()
     {
-        $response = $this->get('/api/user');
+        $response = $this->get('/api/user/1');
 
         $response->assertStatus(200)
             ->assertJsonStructure([
-                'code', 'msg'
+                'code', 'msg', 'data' => [
+                    'id', 'name'
+                ]
             ]);
     }
 }
