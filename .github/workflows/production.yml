@@ -1,0 +1,14 @@
+name: Production
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Kubernetes
+    uses: XNXKTech/workflows/.github/workflows/deploy-k8s.yml@main
+    with:
+      environment: Production
+      registry: registry.cn-hangzhou.aliyuncs.com
+    secrets:
+      K8S_CONFIG: ${{ secrets.K8S_CONFIG }}
