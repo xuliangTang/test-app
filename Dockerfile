@@ -47,6 +47,7 @@ RUN mkdir -p /run/nginx; \
     rm -rf composer.lock package.json .docker .env.example .env.production
 
 COPY .docker/nginx.conf /etc/nginx/http.d/default.conf
+COPY .docker/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 VOLUME [ "/app" ]
 
